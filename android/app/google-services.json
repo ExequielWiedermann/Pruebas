@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "259581899018",
+    "firebase_url": "https://appportal-a4fbe.firebaseio.com",
+    "project_id": "appportal-a4fbe",
+    "storage_bucket": "appportal-a4fbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259581899018:android:a694783401dc346b",
+        "android_client_info": {
+          "package_name": "ar.com.initdev.app_portal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259581899018-blp1pebub4j0hgqhncrsrbn9l8tt19b6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZjh3Gmgsq30pJjP9AJGQEPXTxIEeDCHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259581899018-blp1pebub4j0hgqhncrsrbn9l8tt19b6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -51,7 +51,7 @@ class _AdminState extends State<Admin> {
                         color:
                         _selectedPage == Page.manage ? active : notActive,
                       ),
-                      label: Text('Manage'))),
+                      label: Text('Administración'))),
             ],
           ),
           elevation: 0.0,
@@ -95,7 +95,7 @@ class _AdminState extends State<Admin> {
                           title: FlatButton.icon(
                               onPressed: null,
                               icon: Icon(Icons.people_outline),
-                              label: Text("Users")),
+                              label: Text("Usuario")),
                           subtitle: Text(
                             '7',
                             textAlign: TextAlign.center,
@@ -110,7 +110,7 @@ class _AdminState extends State<Admin> {
                           title: FlatButton.icon(
                               onPressed: null,
                               icon: Icon(Icons.category),
-                              label: Text("Categories")),
+                              label: Text("Categorias")),
                           subtitle: Text(
                             '23',
                             textAlign: TextAlign.center,
@@ -125,7 +125,7 @@ class _AdminState extends State<Admin> {
                           title: FlatButton.icon(
                               onPressed: null,
                               icon: Icon(Icons.track_changes),
-                              label: Text("Producs")),
+                              label: Text("Productos")),
                           subtitle: Text(
                             '120',
                             textAlign: TextAlign.center,
@@ -139,40 +139,10 @@ class _AdminState extends State<Admin> {
                       child: ListTile(
                           title: FlatButton.icon(
                               onPressed: null,
-                              icon: Icon(Icons.tag_faces),
-                              label: Text("Sold")),
-                          subtitle: Text(
-                            '13',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: active, fontSize: 60.0),
-                          )),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(22.0),
-                    child: Card(
-                      child: ListTile(
-                          title: FlatButton.icon(
-                              onPressed: null,
                               icon: Icon(Icons.shopping_cart),
-                              label: Text("Orders")),
+                              label: Text("Ordenes")),
                           subtitle: Text(
                             '5',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: active, fontSize: 60.0),
-                          )),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(22.0),
-                    child: Card(
-                      child: ListTile(
-                          title: FlatButton.icon(
-                              onPressed: null,
-                              icon: Icon(Icons.close),
-                              label: Text("Return")),
-                          subtitle: Text(
-                            '0',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: active, fontSize: 60.0),
                           )),
@@ -189,19 +159,19 @@ class _AdminState extends State<Admin> {
           children: <Widget>[
             ListTile(
               leading: Icon(Icons.add),
-              title: Text("Add product"),
+              title: Text("Agregar Producto"),
               onTap: () {},
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.change_history),
-              title: Text("Products list"),
+              leading: Icon(Icons.category),
+              title: Text("Lista de Productos"),
               onTap: () {},
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.add_circle),
-              title: Text("Add category"),
+              leading: Icon(Icons.add),
+              title: Text("Agregar Categoria"),
               onTap: () {
                 _categoryAlert();
               },
@@ -209,21 +179,21 @@ class _AdminState extends State<Admin> {
             Divider(),
             ListTile(
               leading: Icon(Icons.category),
-              title: Text("Category list"),
+              title: Text("Lista de Categorias"),
               onTap: () {},
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.add_circle_outline),
-              title: Text("Add brand"),
+              leading: Icon(Icons.add),
+              title: Text("Agregar Marca"),
               onTap: () {
                 _brandAlert();
               },
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.library_books),
-              title: Text("brand list"),
+              leading: Icon(Icons.category),
+              title: Text("Lista de Marcas"),
               onTap: () {},
             ),
             Divider(),

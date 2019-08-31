@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../db/category.dart';
 import '../db/brand.dart';
+import '../db/product.dart';
 
 enum Page { dashboard, manage }
 
@@ -16,10 +17,13 @@ class _AdminState extends State<Admin> {
   MaterialColor notActive = Colors.grey;
   TextEditingController categoryController = TextEditingController();
   TextEditingController brandController = TextEditingController();
+  TextEditingController productoController = TextEditingController();
   GlobalKey<FormState> _categoryFormKey = GlobalKey();
   GlobalKey<FormState> _brandFormKey = GlobalKey();
+  GlobalKey<FormState> _productoFormKey = GlobalKey();
   BrandService _brandService = BrandService();
   CategoryService _categoryService = CategoryService();
+  ProductoService _productoService = ProductoService();
 
 
 
@@ -160,7 +164,9 @@ class _AdminState extends State<Admin> {
             ListTile(
               leading: Icon(Icons.add),
               title: Text("Agregar Producto"),
-              onTap: () {},
+              onTap: () {
+                _productAlert();
+              },
             ),
             Divider(),
             ListTile(
@@ -217,7 +223,7 @@ class _AdminState extends State<Admin> {
             }
           },
           decoration: InputDecoration(
-              hintText: "add category"
+              hintText: "Agregar Categoria"
           ),
         ),
       ),
@@ -226,12 +232,12 @@ class _AdminState extends State<Admin> {
           if(categoryController.text != null){
             _categoryService.createCategory(categoryController.text);
           }
-          Fluttertoast.showToast(msg: 'category created');
+          Fluttertoast.showToast(msg: 'Categoria Creada');
           Navigator.pop(context);
-        }, child: Text('ADD')),
+        }, child: Text('AGREGAR')),
         FlatButton(onPressed: (){
           Navigator.pop(context);
-        }, child: Text('CANCEL')),
+        }, child: Text('CANCELAR')),
 
       ],
     );
@@ -251,7 +257,7 @@ class _AdminState extends State<Admin> {
             }
           },
           decoration: InputDecoration(
-              hintText: "add brand"
+              hintText: "Agregar Marca"
           ),
         ),
       ),
@@ -260,12 +266,46 @@ class _AdminState extends State<Admin> {
           if(brandController.text != null){
             _brandService.createBrand(brandController.text);
           }
-          Fluttertoast.showToast(msg: 'brand added');
+          Fluttertoast.showToast(msg: 'Marca Agregada');
           Navigator.pop(context);
-        }, child: Text('ADD')),
+        }, child: Text('AGREGAR')),
         FlatButton(onPressed: (){
           Navigator.pop(context);
-        }, child: Text('CANCEL')),
+        }, child: Text('CANCELAR')),
+
+      ],
+    );
+
+    showDialog(context: context, builder: (_) => alert);
+  }
+
+  void _productAlert() {
+    var alert = new AlertDialog(
+      content: Form(
+        key: _productoFormKey,
+        child: TextFormField(
+          controller: productoController,
+          validator: (value){
+            if(value.isEmpty){
+              return 'category cannot be empty';
+            }
+          },
+          decoration: InputDecoration(
+              hintText: "Agregar Producto"
+          ),
+        ),
+      ),
+      actions: <Widget>[
+        FlatButton(onPressed: (){
+          if(productoController.text != null){
+            _productoService.createProducto(productoController.text);
+          }
+          Fluttertoast.showToast(msg: 'Producto Creado');
+          Navigator.pop(context);
+        }, child: Text('AGREGAR')),
+        FlatButton(onPressed: (){
+          Navigator.pop(context);
+        }, child: Text('CANCELAR')),
 
       ],
     );

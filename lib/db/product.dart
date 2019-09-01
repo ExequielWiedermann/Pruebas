@@ -9,5 +9,6 @@ class ProductoService{
     String categoryId = id.v1();
 
     _firestore.collection('producto').document(categoryId).setData({'nombre': name});
+   // _firestore.collection('producto').document(categoryId).setData({'descripción' : descripcion});
   }
 }

@@ -8,6 +8,6 @@ class CategoryService{
     var id = Uuid();
     String categoryId = id.v1();
 
-    _firestore.collection('categoria').document(categoryId).setData({'nombre': name});
+    _firestore.collection('categorias').document(categoryId).setData({'nombre': name});
   }
 }

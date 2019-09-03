@@ -20,7 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   carousel_pro: ^0.0.13
-  google_sign_in: ^3.2.4
+  google_sign_in: ^4.0.7
   shared_preferences: ^0.4.3
   image_picker: ^0.6.1+4
   cached_network_image: ^0.5.1

@@ -13,12 +13,12 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '3'
+    flutterVersionCode = '4'
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
-    flutterVersionName = '3.0'
+    flutterVersionName = '4.0'
 }
 
 apply plugin: 'com.android.application'
@@ -45,12 +45,12 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "ar.com.initdev.app_portal"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 28
         //versionCode flutterVersionCode.toInteger()
-        versionCode 3
+        versionCode 4
         //versionName flutterVersionName
-        versionName "3.0"
+        versionName "4.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }

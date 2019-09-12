@@ -144,11 +144,6 @@ class _AdminState extends State<Admin> {
         key: _categoryFormKey,
         child: TextFormField(
           controller: categoryController,
-          validator: (value){
-            if(value.isEmpty){
-              return 'category cannot be empty';
-            }
-          },
           decoration: InputDecoration(
               hintText: "Agregar Categoria"
           ),

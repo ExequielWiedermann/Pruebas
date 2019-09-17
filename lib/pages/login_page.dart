@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
               context: context,
               builder: (context) => AlertDialog(
                     title: Text("Error"),
-                    content: Text("Only admins can access!"),
+                    content: Text("Solo un perfil administrador puede acceder"),
                   ));
           break;
         case LoginState.IDLE:

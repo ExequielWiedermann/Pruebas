@@ -8,7 +8,7 @@ class LoginValidators {
       if(email.contains("@")){
         sink.add(email);
       } else {
-        sink.addError("Invalid e-mail!");
+        sink.addError("Email no valido");
       }
     }
   );
@@ -18,7 +18,7 @@ class LoginValidators {
       if(password.length > 4){
         sink.add(password);
       } else {
-        sink.addError("Invalid password (less than 5 characters)!");
+        sink.addError("Contraseña invalida, le quedan cinco intentos");
       }
     }
   );

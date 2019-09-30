@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:app_portal/validators/login_validators.dart';
 import 'package:rxdart/rxdart.dart';
+//Lo utilizo para validar
+import 'package:app_portal/validators/login_validators.dart';
 
 enum LoginState { IDLE, LOADING, SUCCESS, FAIL }
 
@@ -17,9 +18,7 @@ class LoginBloc extends BlocBase with LoginValidators {
   Stream<String> get outPassword => _passwordController.stream.transform(validatePassword);
   Stream<LoginState> get outState => _stateController.stream;
 
-  // stream para acionar o botão de login
-  // valida se os valores de email e password estão preenchidos
-  // poderia combinar mais valores, mas estamos usando somente 2
+
   Stream<bool> get outSubmitValid => Observable.combineLatest2(outEmail, outPassword, (a, b) => true);
 
   Function(String) get changeEmail => _emailController.sink.add;
@@ -31,7 +30,7 @@ class LoginBloc extends BlocBase with LoginValidators {
     _streamSubscription = FirebaseAuth.instance.onAuthStateChanged.listen((user) async {
       if(user != null){
         if(await verifyPrivileges(user)){
-          _stateController.add(LoginState.SUCCESS);
+          _stateController.add(LoginState.LOADING);
         } else {
           FirebaseAuth.instance.signOut();
           _stateController.add(LoginState.FAIL);
@@ -72,7 +71,7 @@ class LoginBloc extends BlocBase with LoginValidators {
     _emailController.close();
     _passwordController.close();
     _stateController.close();
-    _streamSubscription.cancel();
+    _streamSubscription.resume();
     super.dispose();
   }
 }

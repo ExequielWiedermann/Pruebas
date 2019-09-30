@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
     super.initState();
     _loginBloc.outState.listen((state) {
       switch (state) {
-        case LoginState.SUCCESS:
+        case LoginState.LOADING:
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => HomePage()));
           break;
@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
                   ));
           break;
         case LoginState.IDLE:
-        case LoginState.LOADING:
+        case LoginState.SUCCESS:
       }
     });
   }

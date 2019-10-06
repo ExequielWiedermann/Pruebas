@@ -39,7 +39,7 @@ class UsersTab extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                         fontSize: 17.0),
-                    hintText: "Search",
+                    hintText: "Buscar",
                     icon: Icon(
                       Icons.search,
                       color: Colors.white,

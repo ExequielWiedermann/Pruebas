@@ -52,7 +52,7 @@ class UsersTab extends StatelessWidget {
               child: StreamBuilder<List>(
                   stream: _userBloc.outUsers,
                   builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
+                    if (snapshot.hasData) {
                       return Center(
                         child: CircularProgressIndicator(
                           valueColor: AlwaysStoppedAnimation(Colors.white),
@@ -67,6 +67,7 @@ class UsersTab extends StatelessWidget {
                         ),
                       );
                     } else
+
                       return ListView.separated(
                           itemBuilder: (context, index) {
                             return UserTile(snapshot.data[index]);

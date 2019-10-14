@@ -79,7 +79,7 @@ class _EditCategoryDialogState extends State<EditCategoryDialog> {
                     builder: (context, snapshot) {
                       if (!snapshot.hasData) return Container();
                       return FlatButton(
-                        child: Text("Delete"),
+                        child: Text("Eliminar"),
                         textColor: Colors.red,
                         onPressed: snapshot.data
                             ? () {
@@ -93,7 +93,7 @@ class _EditCategoryDialogState extends State<EditCategoryDialog> {
                     stream: _categoryBloc.submitValid,
                     builder: (context, snapshot) {
                       return FlatButton(
-                        child: Text("Save"),
+                        child: Text("Guardar"),
                         onPressed: snapshot.hasData
                             ? () async {
                                 _categoryBloc.saveData();

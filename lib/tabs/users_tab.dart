@@ -62,7 +62,7 @@ class UsersTab extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.only(top: 20),
                         child: Text(
-                          "Nenhum usuário encontrado!",
+                          "No se encontraron usuarios!",
                           style: TextStyle(color: Colors.white),
                         ),
                       );

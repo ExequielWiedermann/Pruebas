@@ -74,8 +74,8 @@ class _ProductPageState extends State<ProductPage> with ProductValidator {
                               builder: (context, snapshot) {
                                 return Text(
                                   snapshot.data
-                                      ? "Edit product"
-                                      : "New product",
+                                      ? "Editar Producto"
+                                      : "Nuevo Producto",
                                   style: TextStyle(
                                       fontSize: 22,
                                       fontWeight: FontWeight.w600),
@@ -239,7 +239,7 @@ class _ProductPageState extends State<ProductPage> with ProductValidator {
 
       _scaffoldKey.currentState.showSnackBar(SnackBar(
         content: Text(
-          success ? "Product saved!" : "Error: product could not be saved!",
+          success ? "Producto Guardado!" : "Error: al guardar el producto!",
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: success ? Colors.blue : Colors.red,

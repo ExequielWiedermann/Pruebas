@@ -56,11 +56,11 @@ class _HomePageState extends State<HomePage> {
           },
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.person), title: Text("Clients")),
+                icon: Icon(Icons.person), title: Text("Clientes")),
             BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_cart), title: Text("Orders")),
+                icon: Icon(Icons.shopping_cart), title: Text("Ordenes")),
             BottomNavigationBarItem(
-                icon: Icon(Icons.list), title: Text("Products")),
+                icon: Icon(Icons.list), title: Text("Productos")),
           ],
         ),
       ),
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.black87,
                 ),
                 backgroundColor: Colors.white,
-                label: "Delivered down",
+                label: "Entregado abajo",
                 labelStyle: TextStyle(fontSize: 14),
                 onTap: () {
                   _ordersBloc.setOrderCriteria(SortCriteria.READY_LAST);
@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.black87,
                 ),
                 backgroundColor: Colors.white,
-                label: "Delivered up",
+                label: "Entregado",
                 labelStyle: TextStyle(fontSize: 14),
                 onTap: () {
                   _ordersBloc.setOrderCriteria(SortCriteria.READY_FIRST);

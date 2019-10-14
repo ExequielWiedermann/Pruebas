@@ -30,7 +30,7 @@ class ImageSourceSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           FlatButton(
-            child: Text("Camera"),
+            child: Text("Cámara"),
             onPressed: () async {
               File image =
                   await ImagePicker.pickImage(source: ImageSource.camera);
@@ -38,7 +38,7 @@ class ImageSourceSheet extends StatelessWidget {
             },
           ),
           FlatButton(
-            child: Text("Gallery"),
+            child: Text("Galeria"),
             onPressed: () async {
               File image =
                   await ImagePicker.pickImage(source: ImageSource.gallery);

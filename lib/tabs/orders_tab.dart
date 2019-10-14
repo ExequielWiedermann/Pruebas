@@ -32,7 +32,7 @@ class OrdersTab extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: Text(
-                    "Nenhum pedido encontrado!",
+                    "No se encontraron pedidos",
                     style: TextStyle(color: Colors.white),
                   ),
                 );

@@ -32,9 +32,6 @@ class _LoginPageState extends State<LoginPage> {
           break;
         case LoginState.IDLE:
         case LoginState.SUCCESS:
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => HomePage()));
-          break;
       }
     });
   }
